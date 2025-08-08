@@ -1,21 +1,26 @@
-import { useFormContext } from "react-hook-form";
-import { useWarnings } from "./WarningsContext";
+import React, { useFormContext } from "react-hook-form";
+import { InputText } from "primereact/inputtext";
+import { RSController } from "./RSForm";
 
 export default function NameInput() {
-  const {
-    register,
-    formState: { errors },
-  } = useFormContext();
-  const { warnings } = useWarnings();
+  const { control } = useFormContext();
 
   return (
-    <div>
-      <label>Name:</label>
-      <input {...register("name")} />
-      {errors.name && <p style={{ color: "red" }}>{errors.name.message}</p>}
-      {!errors.name && warnings["name"] && (
-        <p style={{ color: "yellow" }}>{warnings["name"]}</p>
-      )}
-    </div>
+    <RSController
+      name="name"
+      control={control}
+      render={({ field, fieldState }) => {
+        const error = fieldState.error;
+        return (
+          <div>
+            <label htmlFor="name">Name:</label>
+            <InputText id="name" {...field} />
+            {typeof error?.message === "string" && (
+              <p style={{ color: "red" }}>{error.message}</p>
+            )}
+          </div>
+        );
+      }}
+    />
   );
 }

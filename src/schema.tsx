@@ -8,17 +8,18 @@ export const formSchema = z
   .superRefine((data, ctx) => {
     if (data.name.length < 3) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: "custom",
         message: "Name is quite short",
         path: ["name"],
+        params: { severity: "error" },
       });
     }
-
     if (data.age < 18) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: "custom",
         message: "User is under 18",
         path: ["age"],
+        params: { severity: "warning" },
       });
     }
   });
