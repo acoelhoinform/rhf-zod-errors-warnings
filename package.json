@@ -29,8 +29,8 @@
     "@vitejs/plugin-react": "^4.7.0",
     "jsdom": "^26.1.0",
     "typescript": "^5.8.3",
-    "vite": "^7.0.6",
-    "vitest": "^3.2.4"
+    "vite": "6.0.4",
+    "vitest": "0.34.6"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -44,5 +44,8 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "packageManager": "yarn@4.9.1+sha512.f95ce356460e05be48d66401c1ae64ef84d163dd689964962c6888a9810865e39097a5e9de748876c2e0bf89b232d583c33982773e9903ae7a76257270986538"
+  "packageManager": "yarn@4.9.1+sha512.f95ce356460e05be48d66401c1ae64ef84d163dd689964962c6888a9810865e39097a5e9de748876c2e0bf89b232d583c33982773e9903ae7a76257270986538",
+  "repository": "https://github.com/acoelhoinform/rhf-zod-errors-warnings.git",
+  "author": "acoelhoinform <138196090+acoelhoinform@users.noreply.github.com>",
+  "license": "MIT"
 }
